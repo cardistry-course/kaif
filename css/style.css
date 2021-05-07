@@ -1,0 +1,374 @@
+*{
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	list-style: none;
+    font-family: 'Caveat', cursive;
+}
+
+body{
+    background-color: black;
+}
+
+
+
+.menu-header_list{
+	display: flex;
+	justify-content: space-evenly;
+	padding-top: 40px;
+	font-size: 30px;
+    
+}
+
+.menu_item{
+	color: rgb(255, 255, 255);
+    margin-left: 100px;
+}
+
+.logo{
+    color: #1cc0b8;
+    font-size: 40px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.hamburger-menu{
+	display: none;
+}
+
+
+.background{
+    background: url(../img/background.png);
+    background-size: 100%;
+    width: 100%;
+    padding-bottom: 35%;
+    background-repeat: no-repeat;
+    z-index: -1000;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.menu-res h2{
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    font-size: 2.5em;
+}
+
+.menu-res img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container{
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.reserve h2{
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    font-size: 2.5em;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.reserve a{
+    color: cyan;
+    background-color: rgb(3, 42, 94);
+    padding: 15px 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#the-menu,
+#reserve,
+#feedback{
+    transition: 1s;
+}
+
+#name_l{
+	grid-area: name_l;
+}
+
+#email_l{
+	grid-area: email_l;
+}
+
+#message_l{
+	grid-area: message_l;
+}
+
+#name_l{
+	grid-area: name_l;
+}
+
+#email_l{
+	grid-area: email_l;
+}
+
+#message_l{
+	grid-area: message_l;
+}
+
+.feedback a{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+	grid-area: btn;
+	background-color: white;
+    padding: 10px ;
+	color: #242943;
+	font-size: 20px;
+	font-weight: 300;
+    transition: 1s;
+}
+
+.feedback a:hover{
+    background-color: rgb(137, 137, 141);
+	color: #fff;
+    transition: 1s;
+    letter-spacing: 2px;
+}
+
+.feedback form{
+	display: grid;
+	grid-template-areas: 
+                        'name_l email_l'
+                        'name_i email_i'
+                        'message_l .'
+                        'message_i message_i'
+                        'btn .';
+	grid-template-rows: minmax(auto, auto) 50px minmax(auto, auto)  150px 50px;
+
+	grid-gap: 10px;
+}
+
+.feedback{
+	background-color: #242943;
+	color: white;
+	padding: 100px 0px;
+    margin-top: 50px;
+}
+
+.feedback h1{
+	font-weight: 600;
+    font-size: 2em;
+	text-align: center;
+	margin-bottom: 50px; 
+	border-bottom: 5px solid white;
+	padding-bottom: 10px;
+}
+
+input, textarea{
+	border: none;
+	outline: none;
+	background-color: #2a2f4a;
+    font-size: 1.4em;
+    color: turquoise;
+}
+
+textarea{
+	width: 100%;
+}
+
+label{
+	letter-spacing: 5px;
+	font-weight: 300;
+}
+
+@media(max-width: 982px){
+	.menu{
+		display: none;
+	}
+	.hamburger-menu{
+		display: block;
+	}
+	#menu_toggle{
+		opacity: 0;
+
+	}
+	.menu_btn{
+		display: flex;
+		align-items: center;
+		position: fixed;
+		top: 20px;
+        right: 20px;
+		width: 26px;
+		height: 26px;
+		cursor: pointer;
+		z-index: 1;
+	}
+	.menu_btn>span,.menu_btn>span::before,.menu_btn>span::after{
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		background-color: #616161;
+
+	}
+	.menu_btn>span::before{
+		content: "";
+		bottom: 8px;
+	}
+	.menu_btn>span::after{
+		content: "";
+		bottom: -8px;
+	}
+	.menu_box{
+		display: block;
+		position: fixed;
+		visibility: hidden;
+		top: 0;
+		left: 100%;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 80px 0;
+		list-style: none;
+		text-align: center;
+		background-color: #ECEFF1;
+		box-shadow: 1px 0px 6px rgba(0,0,0,.2); 
+	}
+	.menu_item{
+		display: block;
+		padding: 12px 24px;
+		color: #333;
+        margin: 30px;
+		font-size: 30px;
+		font-weight: 600px;
+		text-decoration: none;
+	}
+	.menu_item:hover{
+		background-color: #CFD8DC;
+	}
+	#menu_toggle:checked ~ .menu_btn>span{
+		transform: rotate(45deg);
+
+	}
+		#menu_toggle:checked ~ .menu_btn>span::before{
+			top: 0;
+		transform: rotate(0);
+		
+	}
+		#menu_toggle:checked ~ .menu_btn>span::after{
+			top: 0;
+		transform: rotate(90deg);
+		
+	}
+		#menu_toggle:checked ~ .menu_box{
+		visibility: visible; left: 0;
+		
+	}
+
+	.menu_btn > span, .menu_btn > span::before, .menu_btn > span::after {
+		transition-duration: .25s; 
+	} 
+	.menu_box {
+		transition-duration: .25s; 
+	}
+	.menu_item {
+		transition-duration: .25s;
+	}
+}
+
+
+@media(max-width: 768px){
+	.menu{
+		display: none;
+	}
+	.hamburger-menu{
+		display: block;
+	}
+	#menu_toggle{
+		opacity: 0;
+
+	}
+	.menu_btn{
+		display: flex;
+		align-items: center;
+		position: fixed;
+		top: 20px;
+        right: 20px;
+		width: 26px;
+		height: 26px;
+		cursor: pointer;
+		z-index: 1;
+	}
+	.menu_btn>span,.menu_btn>span::before,.menu_btn>span::after{
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		background-color: #616161;
+
+	}
+	.menu_btn>span::before{
+		content: "";
+		bottom: 8px;
+	}
+	.menu_btn>span::after{
+		content: "";
+		bottom: -8px;
+	}
+	.menu_box{
+		display: block;
+		position: fixed;
+		visibility: hidden;
+		top: 0;
+		left: 100%;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 80px 0;
+		list-style: none;
+		text-align: center;
+		background-color: #ECEFF1;
+		box-shadow: 1px 0px 6px rgba(0,0,0,.2); 
+	}
+	.menu_item{
+		display: block;
+        margin: 30px;
+		padding: 12px 24px;
+		color: #333;
+		font-size: 20px;
+		font-weight: 600px;
+		text-decoration: none;
+        
+	}
+	.menu_item:hover{
+		background-color: #CFD8DC;
+	}
+	#menu_toggle:checked ~ .menu_btn>span{
+		transform: rotate(45deg);
+
+	}
+		#menu_toggle:checked ~ .menu_btn>span::before{
+			top: 0;
+		transform: rotate(0);
+		
+	}
+		#menu_toggle:checked ~ .menu_btn>span::after{
+			top: 0;
+		transform: rotate(90deg);
+		
+	}
+		#menu_toggle:checked ~ .menu_box{
+		visibility: visible; left: 0;
+		
+	}
+
+	.menu_btn > span, .menu_btn > span::before, .menu_btn > span::after {
+		transition-duration: .25s; 
+	} 
+	.menu_box {
+		transition-duration: .25s; 
+	}
+	.menu_item {
+		transition-duration: .25s;
+	}
+}
